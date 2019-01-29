@@ -1,3 +1,4 @@
+//This is to only load the Javascript if the page has been loaded
 window.addEventListener('load', ()=> {
     let long;
     let lat;
@@ -6,7 +7,7 @@ window.addEventListener('load', ()=> {
     let locationTimezone = document.querySelector(".location-timezone");
     let temperatureSection = document.querySelector(".degree-section");
     const temperatureSpan = document.querySelector(".degree-section span");
-
+    //This uses the built in geolocation through the web browser
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(position =>{
             long = position.coords.longitude;
@@ -24,10 +25,10 @@ window.addEventListener('load', ()=> {
                 console.log(data);
                 const { temperature, summary, icon } = data.currently;
 
-                temperatureDegree.textContent = temperature;
+                temperatureDegree.textContent = Math.floor(temperature);
                 temperatureDescription.textContent = summary;
                 locationTimezone.textContent = data.timezone;
-
+                //Conversion for Celsius
                 let celsius = (temperature - 32) * (5 / 9);
                 setIcons(icon, document.querySelector(".icon"));
 
@@ -44,6 +45,7 @@ window.addEventListener('load', ()=> {
             });
         });
     }
+    //This is to initialize using the Icon information provided by DarkSky.
     function setIcons(icon, iconID){
         const skycons = new Skycons({color: "white"});
         const currentIcon = icon.replace(/-/g, "_").toUpperCase();

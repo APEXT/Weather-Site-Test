@@ -39,7 +39,7 @@ window.addEventListener('load', ()=> {
 
                     } else {
                         temperatureSpan.textContent = 'F';
-                        temperatureDegree.textContent = temperature;
+                        temperatureDegree.textContent = Math.floor(temperature);
                     }
                 })
             });

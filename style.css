@@ -40,6 +40,10 @@ body {
 .temperature {
     flex-direction: column;
 }
+.temperature-description {
+    padding: 5px;
+    border: 3px inset lightblue;
+}
 .degree-section {
     display: flex;
     align-items: center;

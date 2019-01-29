@@ -3,16 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
-.button {
-    background-color: rgb(171, 228, 209);
-}
 a.button {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
     width: 10%;
     height: 5%;
-    padding-top: 20px;
+    padding-top: 15px;
     top: 15px;
     left: 15px;
     font-size: 22px;
@@ -20,6 +14,10 @@ a.button {
     text-align: center;
     text-decoration: none;
     color: initial;
+    background: rgb(172, 228, 209);
+    border-radius: 13px;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 body {
     height: 100hv;

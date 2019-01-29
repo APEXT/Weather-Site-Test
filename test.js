@@ -23,8 +23,7 @@ window.addEventListener('load', ()=> {
             })
             .then(data => {
                 console.log(data);
-                const { temperature, summary, icon } = data.currently;
-
+                const { temperature, summary, icon } = data.currently;          
                 temperatureDegree.textContent = Math.floor(temperature);
                 temperatureDescription.textContent = summary;
                 locationTimezone.textContent = data.timezone;
